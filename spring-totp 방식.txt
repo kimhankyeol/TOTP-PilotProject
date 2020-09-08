@@ -1,0 +1,12 @@
+//요청 
+get  방식
+http://localhost:8080/code/generate/{username}
+
+//인증
+post 방식 
+http://localhost:8080/code/validate/key
+
+{
+    "username": "지메일",
+    "code": "otp 번호"
+}
