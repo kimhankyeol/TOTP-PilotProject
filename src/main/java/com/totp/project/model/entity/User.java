@@ -21,7 +21,7 @@ public class User {
     private Long id;
     private String name;
     private String email;
-    private String phoneNumber;
+    private String password;
     private LocalDateTime regDt;
     private String regUser;
     private LocalDateTime modDt;

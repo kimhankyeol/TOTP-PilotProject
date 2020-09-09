@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Slf4j
@@ -44,7 +45,7 @@ public class CodeController {
     }
 
     @PostMapping("/validate/key")
-    public Validation validateKey(@RequestBody ValidateCodeDto body) {
-        return new Validation(gAuth.authorizeUser(body.getUsername(), body.getCode()));
+    public Validation validateKey(HttpServletRequest req) {
+        return new Validation(gAuth.authorizeUser(req.getParameter("username"), Integer.parseInt(req.getParameter("code"))));
     }
 }
