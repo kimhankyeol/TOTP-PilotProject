@@ -1,5 +1,5 @@
-# TOTP-PilotProject
-TOTP 파일럿 프로젝트
+# OTP-PilotProject
+OTP 파일럿 프로젝트
 
 
 ## 개발 환경
