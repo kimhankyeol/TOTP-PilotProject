@@ -24,7 +24,7 @@
                     var cont2="";
                     if(resp=="success"){
                         cont +="<iframe style='width:300px; height:300px' src='/code/generate/"+$('#email').val()+"'></iframe>";
-                        cont2 +="키<input id='authEmail' type='text' value='"+$('#email').val()+"'/>";
+                        cont2 +="이메일<input id='authEmail' type='text' value='"+$('#email').val()+"'/>";
                         cont2 +="키<input id='key' type='text'/>";
                         cont2 +="<button id='' onclick='login2()'>otp 로그인</button>";
                         $('#logInfo').hide();
@@ -46,9 +46,9 @@
                     'code':$('#key').val()
                 },
                 success:function(resp){
-                    if(resp){
+                    if(resp.valid){
                         alert('로그인 성공');
-                        location.href="/user/login";
+                        location.href="/user/login?useremail="+$('#authEmail').val();
                     }else{
                         alert('로그인 실패');
                         return false;

@@ -32,10 +32,11 @@ public class UserController {
     }
     @GetMapping(value="/login")
     public @ResponseBody String login(HttpServletRequest req){
-        String email = req.getParameter("email");
-        String password = req.getParameter("password");
+        String email = req.getParameter("useremail");
+        //String password = req.getParameter("password");
         System.out.println(email);
-        User uDTO = userService.findByEmailAndPassword(email,password);
+        //User uDTO = userService.findByEmailAndPassword(email,password);
+        User uDTO = userService.findByEmail(email);
         if(uDTO==null){
             return "failed";
         }
